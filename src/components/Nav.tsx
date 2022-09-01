@@ -4,13 +4,8 @@ import { savedRepos } from '../pages/SavedRepos';
 
 const Nav: Component = () => {
   return (
-    <nav class="mt-5 mb-3">
-      <NavLink
-        href="/"
-        class="btn btn-primary me-2"
-        end
-        activeClass="btn-success"
-      >
+    <nav class="mx-auto flex w-full items-center justify-around py-6 px-52">
+      <NavLink href="/" class="btn btn-primary " end activeClass="btn-success">
         Home
       </NavLink>
       <NavLink

@@ -13,16 +13,22 @@ const Home: Component = () => {
 
   return (
     <div>
-      <form class="mb-3" onSubmit={(event) => fetchWithUsername(event)}>
-        <input
-          type="text"
-          class="p1 align-middle"
-          id="usernameInput"
-          required
-        />
-        <button class="btn btn-dark ms-3 w-auto">Fetch</button>
+      <form class="mb-8" onSubmit={(event) => fetchWithUsername(event)}>
+        <div class=" mx-auto flex max-w-4xl">
+          <input
+            type="text"
+            class="input w-full flex bg-gray-500"
+            id="usernameInput"
+            required
+          />
+          <button class="ml-5 btn btn-success">Fetch</button>
+        </div>
       </form>
-      <h3>Github repos for {username()}</h3>
+      <div class="mx-auto w-full text-center">
+        <h1 class="text-4xl text-center mb-8">
+          Github repos for <span class="text-yellow-500">{username()}</span>
+        </h1>
+      </div>
       <For each={repos()}>{(repo: Repo) => <RepoCard repo={repo} />}</For>
     </div>
   );

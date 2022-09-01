@@ -1,11 +1,12 @@
 import { Route, Routes } from 'solid-app-router';
 import { Component, createEffect, createSignal } from 'solid-js';
 import Nav from './components/Nav';
+import { Repo } from './components/RepoCard';
 import Home from './pages/Home';
 import SavedRepos from './pages/SavedRepos';
 
 const [username, setUsername] = createSignal('realitymolder');
-const [repos, setRepos] = createSignal([]);
+const [repos, setRepos] = createSignal<Repo[]>([]);
 
 createEffect(async () => {
   const res = await fetch(
@@ -17,7 +18,7 @@ createEffect(async () => {
 
 const App: Component = () => {
   return (
-    <div class="container">
+    <div>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
