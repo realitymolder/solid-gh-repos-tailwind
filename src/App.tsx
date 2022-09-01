@@ -7,15 +7,15 @@ import SavedRepos from './pages/SavedRepos';
 const [username, setUsername] = createSignal('realitymolder');
 const [repos, setRepos] = createSignal([]);
 
-const App: Component = () => {
-  createEffect(async () => {
-    const res = await fetch(
-      `https://api.github.com/users/${username()}/repos?sort=created`
-    );
-    setRepos(await res.json());
-    console.log(repos());
-  });
+createEffect(async () => {
+  const res = await fetch(
+    `https://api.github.com/users/${username()}/repos?sort=created`
+  );
+  setRepos(await res.json());
+  console.log(repos());
+});
 
+const App: Component = () => {
   return (
     <div class="container">
       <Nav />
