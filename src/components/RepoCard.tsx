@@ -16,11 +16,13 @@ interface Props {
 }
 const saveRepo = (repo: Repo) => {
   setSavedRepos([repo, ...savedRepos()]);
+  localStorage.setItem('savedRepos', JSON.stringify(savedRepos()));
 };
 
 const unsaveRepo = (repoId: string) => {
   const nextState = savedRepos()?.filter((item) => item.id !== repoId);
   setSavedRepos(nextState);
+  localStorage.setItem('savedRepos', JSON.stringify(savedRepos()));
 };
 
 const repoIsSaved = (repoId: string) => {

@@ -1,3 +1,7 @@
+
+#based on the github repos guide by 
+Ebenezer Don, video: https://www.youtube.com/watch?v=WDodWU-B-aY
+
 ## Usage
 
 Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
